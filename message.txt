@@ -1,0 +1,7 @@
+Hello {first},
+
+I want to learn more about the options {company} has available for New Graduates, in regards to a Software Engineering position.
+
+Best regards,
+
+Paras Adhikary
