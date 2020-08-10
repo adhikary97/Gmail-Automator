@@ -16,4 +16,4 @@ You must put quotes around each argument.
 
 Example command line argument:
 
-`gmail_sender % python3 main.py --subject 'Purdue Undergrad - Software Engineering Internship' --resume_path 'AdhikaryParas2020.pdf'`
+$ `python3 main.py --email 'your.name@gmail.com' --subject 'Purdue Undergrad - Software Engineering Internship' --resume_path 'AdhikaryParas2020.pdf'`

@@ -44,7 +44,7 @@ def send_message(service, user_id, message):
         return None
 
 
-def main(subject, resume_path):
+def main(your_email, subject, resume_path):
     creds = None
 
     if os.path.exists('token.pickle'):
@@ -82,13 +82,14 @@ def main(subject, resume_path):
     for r in recruiters:
         temp = f'{body}'
         temp = temp.replace('{first}', r[0]).replace('{company}', r[1])
-        message = create_message_with_attachment('paras.adhikary@gmail.com', r[2], subject, temp, resume_path)
-        send_message(service, 'paras.adhikary@gmail.com', message)
+        message = create_message_with_attachment(your_email, r[2], subject, temp, resume_path)
+        send_message(service, your_email, message)
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='This program allows you to send multiple emails to different people using the Gmail API')
+    parser.add_argument("--email", help="Your email address, i.e. 'yourname@gmail.com'", required=True)
     parser.add_argument("--subject", help="Subject line of email, i.e. 'Purdue Undergrad - Software Engineering Internship'", required=True)
     parser.add_argument("--resume_path", help="Name of resume file in the directory, i.e. 'AdhikaryParas2020.pdf'", required=True)
     args = parser.parse_args()
-    main(subject=args.subject, resume_path=args.resume_path)
+    main(your_email=args.email, subject=args.subject, resume_path=args.resume_path)
